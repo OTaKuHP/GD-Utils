@@ -1,4 +1,4 @@
-name: GDUtils Alpine Base Image
+name: GDUtils Base Image
 
 on: workflow_dispatch
 

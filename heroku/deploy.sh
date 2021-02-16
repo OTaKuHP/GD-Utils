@@ -107,7 +107,7 @@ if [[ -n "$APP_SUC" ]]; then
 
 	#Basic Auth
 	if [[ -n "$HTTP_USER" && -n "$HTTP_PASS" ]]; then
-		heroku config:set -a "$HEROKU_APP" HTTP_USER="$HTTP_USER" HTTPPASS="$HTTPPASS"
+		heroku config:set -a "$HEROKU_APP" HTTP_USER="$HTTP_USER" HTTP_PASS="$HTTP_PASS"
 	else
 		echo "No AUTH Variables provided, HTTP Basic Auth Disabled"
 	fi

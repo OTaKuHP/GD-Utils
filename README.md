@@ -16,9 +16,8 @@
 ### Deployment
 🔷 Here I Don't Provide any Deploy button to heroku, We Use Github Actions to Deploy container to Heroku 
 
-🔷 Follow below Steps to deploy
+#### Steps
 
-#### It's as simple as 4 Steps
 1. Fork this Repo
 2. Go to Repository `Settings` -> `Secrets`
     ![Secrets](assets/secrets.png)
@@ -26,6 +25,24 @@
     ![Environmental Variables](#♻️-Environmental-Variables)
 4. After Setting this go to Actions and Run the Workflow
    ![Actions](assets/actions.png)
+5. Now Go to the App URL and Press the link shown Below
+   ![Webhook](assets/site.jpg)
+6. Now it Opens the Web Terminal
+   ![Terminal](assets/terminal.png)
+7. Now Copy paste the Below Line's and Paste it there and press enter
+    🔷 if You have given HTTP Basic Auth Vars then Use the Below One
+    ```
+    curl -F "url=https://${HTTP_USER}:${HTTP_PASS}@${APP_NAME}.herokuapp.com/gutils/api/gdurl/tgbot" "https://api.telegram.org/bot${BOT_TOKEN}/setWebhook"
+    ```
+    🔷 Else Use the Below One
+    ```
+    curl -F "url=https://${APP_NAME}.herokuapp.com/gutils/api/gdurl/tgbot" "https://api.telegram.org/bot${BOT_TOKEN}/setWebhook"
+    ```
+8. Done You Bot is Now Live and You can use the terminal Even if you want and Can generate Snap2HTML and Tree
+   🔷 To access your files in your working directory go to 
+    ```
+    https://YOURAPP.herokuapp.com/gdutils/
+    ```
 
 
 ### ♻️ Environmental Variables
@@ -37,9 +54,9 @@
 | REGION | Heroku Container Region | EU | False | Needed only if you need  a EU Container |
 | HEROKU_APP | Heroku app name | Name Must be unique | True | Heroku app name that needs to be Updated or Created (Should be in lowercase) |
 | SA_ZIP | Direct Link | https://abc.com/sa.zip | False* | Service accounts to be zipped in a way that there should be a folder named accounts containing SA Jsons |
-| GH_REPO | SA repo name | accounts | False* | Git repo name where SA's are Uploaded |
-| GH_USER | Github Username | Nenokkadine | False* | Github username Where SA are uploaded |
-| GH_AUTH_TOKEN | Github Auth Token | xxxxxxxxxxxxxx | False* | Get this from [Github](https://github.com/settings/tokens/new) With Scopes `repo` |
+| GH_REPO | SA repo name | accounts | False** | Git repo name where SA's are Uploaded |
+| GH_USER | Github Username | Nenokkadine | False** | Github username Where SA are uploaded |
+| GH_AUTH_TOKEN | Github Auth Token | xxxxxxxxxxxxxx | False** | Get this from [Github](https://github.com/settings/tokens/new) With Scopes `repo` |
 | BOT_TOKEN | Telegram Bot Token | 123456:abcdef | True | Get this from [Telegram](https://t.me/botfather) |
 | AUTH_CHATS | Authorized Chats | 'UserA','UserB' | True | Telegram Username's Should be Given and Should be in Single Quotes |
 | HTTP_USER | Username | user | False | HTTP Basic auth adds an Extra Layer security for you app (recommended) |
@@ -48,6 +65,9 @@
 ### Credits
 👏 [iwestlin](https://github.com/iwestlin) - The original Developer of this tool
 
-👏 [Roshan](https://github.com/roshanconner123) - Translated Entire repo in English
+👏 [Roshan](https://github.com/roshanconner123) - Translated Entire repo into English
 
 👏 [Shuanglei Tao](https://github.com/tsl0922) - Developer of TTYD (Terminal over Web)
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

@@ -67,8 +67,8 @@ if [[ -n "$APP_SUC" ]]; then
 		exit 2
 	fi
 	
-	if [[ -n "$GDCONFIG" ]]; then
-		heroku config:set -a "$HEROKU_APP" } GDCONFIG="$GDCONFIG"
+	if [[ -n "$GD_CONFIG" ]]; then
+		heroku config:set -a "$HEROKU_APP" } GD_CONFIG="$GD_CONFIG"
 		heroku ps:scale worker=1 -a "$HEROKU_APP"
 	else
 		echo "Max Concurrent Downloads Var Not given so Defaults to 3"

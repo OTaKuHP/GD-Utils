@@ -1,4 +1,4 @@
 FROM ghcr.io/nenokkadine/gdutils:latest
-WORKDIR /app
+WORKDIR /gdutils
 COPY start.sh .
 CMD ["bash", "start.sh"]

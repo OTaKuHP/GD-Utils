@@ -68,19 +68,19 @@ if [[ -n "$APP_SUC" ]]; then
 	fi
 
 	#Basic Auth
-	if [[ -n "$HTTPUSER" && -n "HTTPPASS" ]]; then
-		
+	if [[ -n "$HTTP_USER" && -n "$HTTP_PASS" ]]; then
+		heroku config:set -a "$HEROKU_APP" HTTP_USER="$HTTP_USER" HTTPPASS="$HTTPPASS"
+	else
+		echo "No AUTH Variables provided, HTTP Basic Auth Disabled"
+	fi
 	
 	#Config File
-	if [[ -n "$GD_CONFIG" ]]; then
-		heroku config:set -a "$HEROKU_APP" GD_CONFIG="$GD_CONFIG"
-		heroku ps:scale worker=1 -a "$HEROKU_APP"
-	elif [[ -n "$GD_CONFIG_BASE64" ]]; then
-		heroku config:set -a "$HEROKU_APP" GD_CONFIG_BASE64="$GD_CONFIG_BASE64"
+	if [[ -n "$BOT_TOKEN" && -n "$AUTH_CHATS" ]]; then
+		heroku config:set -a "$HEROKU_APP" BOT_TOKEN="$BOT_TOKEN" AUTH_CHATS="$AUTH_CHATS"
 		heroku ps:scale worker=1 -a "$HEROKU_APP"
 	else
-		echo "Config Not Provided, Exiting, For Info Read Readme"
-		heroku ps:scale worker=1 -a "$HEROKU_APP"
+		echo "Bot Token, Auth Chats not Provided Exiting , For Info Read Readme"
+		exit 2
 	fi
 	echo "Deployment Completed"
 else

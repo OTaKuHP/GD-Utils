@@ -42,4 +42,5 @@ wget -q https://github.com/tsl0922/ttyd/releases/download/1.6.3/ttyd.x86_64 -O t
 cd ..
 # Caddy Run
 wget -q https://github.com/nenokkadine/gdutils/assets/html.zip -O assets.zip && unzip -qq assets.zip && rm -rf assets.zip
-caddy run -config=/Caddyfile
+wget -q https://github.com/caddyserver/caddy/releases/download/v2.3.0/caddy_2.3.0_linux_amd64.tar.gz -O /cad.tar.gz && tar xzf cad.tar.gz && rm -rf cad.tar.gz && chmod a+x /caddy
+/caddy run --config /Caddyfile

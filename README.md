@@ -22,7 +22,7 @@
 3. Now set the below Variables in the Github Repository Secrets
     <details open="open">
         <summary>♻️ Environmental Variables</summary>
-
+    </details>
     | Variable | Value | Example | Required | Description |
     | :---: | :---: | :---: | :---: | :---: |
     | HEROKU_EMAIL | Heroku email | abc@abc.com | True | Just Give the email you used for Heroku Account|
@@ -37,6 +37,6 @@
     | AUTH_CHATS | Authorized Chats | 'UserA','UserB' | True | Telegram Username's Should be Given and Should be in Single Quotes |
     | HTTP_USER | Username | user | False | HTTP Basic auth adds an Extra Layer security for you app (recommended) |
     | HTTP_PASS | Password | pass | False | HTTP Basic auth adds an Extra Layer security for you app (recommended) |
-    </details>
+
 4. After Setting this 
 

@@ -22,6 +22,7 @@
 3. Now set the below Variables in the Github Repository Secrets
 <details open="open">
     <summary>♻️ Environmental Variables</summary>
+    
 | Variable | Value | Example | Required | Description |
 | :---: | :---: | :---: | :---: | :---: |
 | HEROKU_EMAIL | Heroku email | abc@abc.com | True | Just Give the email you used for Heroku Account|

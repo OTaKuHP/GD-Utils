@@ -22,7 +22,7 @@
 2. Go to Repository `Settings` -> `Secrets`
     ![Secrets](assets/secrets.png)
 3. Now set the below Variables in the Github Repository Secrets
-    ![Environmental Variables](#♻️-Environmental-Variables)
+    ![Environmental Variables](#Environmental-Variables)
 4. After Setting this go to Actions and Run the Workflow
    ![Actions](assets/actions.png)
 5. Now Go to the App URL and Press the link shown Below
@@ -45,7 +45,7 @@
     ```
 
 
-### ♻️ Environmental Variables
+### Environmental Variables
 
 | Variable | Value | Example | Required | Description |
 | :---: | :---: | :---: | :---: | :---: |

@@ -24,14 +24,15 @@ jobs:
       - name: Compress Build Outputs
         run: |
           cd src
-          tar -czvf gdutils.tar.gz .
+          mkdir build
+          tar --exclude='./build' -czvf build/gdutils.tar.gz .
       - uses: actions/upload-artifact@v2
         with:
           name: Build Location
-          path: src/gdutils.tar.gz
+          path: src/build/gdutils.tar.gz
 
       - run: |
-          mv src/gdutils.tar.gz gdutils.tar.gz
+          mv src/build/gdutils.tar.gz gdutils.tar.gz
       - name: Create Release
         uses: softprops/action-gh-release@v1
         env:

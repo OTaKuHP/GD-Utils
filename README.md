@@ -6,8 +6,11 @@
 
 ### Pre Requisites
 1️⃣ [Github Account](https://github.com)
+
 2️⃣ [Heroku Account](https://heroku.com)
+
 3️⃣ [Telegram Account](https://telegram.org)
+
 4️⃣ [Some Patience](https://google.com)
 
 ### Deployment
@@ -20,9 +23,13 @@
 2. Go to Repository `Settings` -> `Secrets`
     ![Secrets](assets/secrets.png)
 3. Now set the below Variables in the Github Repository Secrets
-<details open="open">
-    <summary>♻️ Environmental Variables</summary>
-    
+    ![Environmental Variables](#♻️-Environmental-Variables)
+4. After Setting this go to Actions and Run the Workflow
+   ![Actions](assets/actions.png)
+
+
+### ♻️ Environmental Variables
+
 | Variable | Value | Example | Required | Description |
 | :---: | :---: | :---: | :---: | :---: |
 | HEROKU_EMAIL | Heroku email | abc@abc.com | True | Just Give the email you used for Heroku Account|
@@ -37,7 +44,10 @@
 | AUTH_CHATS | Authorized Chats | 'UserA','UserB' | True | Telegram Username's Should be Given and Should be in Single Quotes |
 | HTTP_USER | Username | user | False | HTTP Basic auth adds an Extra Layer security for you app (recommended) |
 | HTTP_PASS | Password | pass | False | HTTP Basic auth adds an Extra Layer security for you app (recommended) |
-</details>
-4. After Setting this go to Actions and Run the Workflow
-   ![Actions](assets/actions.png)
 
+### Credits
+👏 [iwestlin](https://github.com/iwestlin) - The original Developer of this tool
+
+👏 [Roshan](https://github.com/roshanconner123) - Translated Entire repo in English
+
+👏 [Shuanglei Tao](https://github.com/tsl0922) - Developer of TTYD (Terminal over Web)

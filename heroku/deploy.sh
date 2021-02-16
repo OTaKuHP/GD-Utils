@@ -99,7 +99,7 @@ if [[ -n "$APP_SUC" ]]; then
 	if [[ -n "$SA_ZIP" ]]; then
 		heroku config:set -a "$HEROKU_APP" SA_ZIP="$SA_ZIP"
 	elif [[ -n "$GH_REPO" && -n "$GH_USER" && -n "$GH_AUTH_TOKEN" ]]; then
-		heroku config:set -a "$HEROKU_APP"  GH_REPO="$GH_REPO" GH_USER="$GH_USER" GH_AUTH_TOKEN="GH_AUTH_TOKEN"	
+		heroku config:set -a "$HEROKU_APP"  GH_REPO="$GH_REPO" GH_USER="$GH_USER" GH_AUTH_TOKEN="$GH_AUTH_TOKEN"	
 	else
 		echo "Provide Some way to get Service Accounts,for Reference check README"
 		exit 2
@@ -114,7 +114,7 @@ if [[ -n "$APP_SUC" ]]; then
 	
 	#Config File
 	if [[ -n "$BOT_TOKEN" && -n "$AUTH_CHATS" ]]; then
-		heroku config:set -a "$HEROKU_APP" BOT_TOKEN="$BOT_TOKEN" AUTH_CHATS="$AUTH_CHATS"
+		heroku config:set -a "$HEROKU_APP" BOT_TOKEN="$BOT_TOKEN" AUTH_CHATS="$AUTH_CHATS" APP_NAME="$HEROKU_APP"
 		heroku ps:scale web=1 -a "$HEROKU_APP"
 	else
 		echo "Bot Token, Auth Chats not Provided Exiting , For Info Read Readme"

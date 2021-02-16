@@ -14,16 +14,35 @@ if [[ -n "$REGION" && -n "$HEROKU_APP" ]]; then
 	heroku apps:create "$HEROKU_APP" --stack=container --region=eu
 	if [[ $? -eq 0 ]]; then
 		echo "Successfully created app"
-		export APP_SUC=true
+		heroku container:push web -a "$HEROKU_APP"
+		if [[ $? -eq 0 ]]; then
+			echo "Deploying"
+			heroku container:release web -a "$HEROKU_APP"
+			if [[ $? -eq 0 ]]; then
+				export APP_SUC=true
+				echo "Deployment Success"
+			else
+				echo "Failed to Release, Try again"
+				exit 2
+			fi
+		else
+			echo "Failed to deploy, Try again"
+			exit 2
+		fi
 	else
 		echo "Could not create app, Trying to push to Registry"
 		echo "Building and pushing the app to Heroku Registry"
 		heroku container:push web -a "$HEROKU_APP"
-		echo "Deploying"
 		if [[ $? -eq 0 ]]; then
+			echo "Deploying"
 			heroku container:release web -a "$HEROKU_APP"
-			export APP_SUC=true
-			echo "Deployment Success"
+			if [[ $? -eq 0 ]]; then
+				export APP_SUC=true
+				echo "Deployment Success"
+			else
+				echo "Container Release Failed"
+				exit 2
+			fi
 		else
 			echo "App Name is not available, Please select another"
 			exit 2
@@ -35,7 +54,21 @@ elif [[ -n "$HEROKU_APP" ]]; then
 	heroku apps:create "$HEROKU_APP" --stack=container
 	if [[ $? -eq 0 ]]; then
 		echo "Successfully created app"
-		export APP_SUC=true
+		heroku container:push web -a "$HEROKU_APP"
+		if [[ $? -eq 0 ]]; then
+			echo "Deploying"
+			heroku container:release web -a "$HEROKU_APP"
+			if [[ $? -eq 0 ]]; then
+				export APP_SUC=true
+				echo "Deployment Success"
+			else
+				echo "Failed to Release, Try again"
+				exit 2
+			fi
+		else
+			echo "Failed to deploy, Try again"
+			exit 2
+		fi
 	else
 		echo "Could not create app, Trying to push to Registry"
 		echo "Building and pushing the app to Heroku Registry"
@@ -43,8 +76,13 @@ elif [[ -n "$HEROKU_APP" ]]; then
 		echo "Deploying"
 		if [[ $? -eq 0 ]]; then
 			heroku container:release web -a "$HEROKU_APP"
-			export APP_SUC=true
-			echo "Deployment Success"
+			if [[ $? -eq 0 ]]; then
+				export APP_SUC=true
+				echo "Deployment Success"
+			else
+				echo "Container Release Failed"
+				exit 2
+			fi
 		else
 			echo "App Name is not available, Please select another"
 			exit 2

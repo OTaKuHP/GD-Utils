@@ -17,5 +17,6 @@ RUN \
                        unrar \
                        unzip \
                        xz \
+                       bash \
                        caddy && \
     rm -rf /var/cache/apk/*

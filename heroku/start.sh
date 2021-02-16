@@ -1,5 +1,5 @@
 #!/bin/bash
-wget -q https://github.com/nenokkadine/gdutils/releases/latest/download/gdutils.tar.gz && tar -xzf gdutils.tar && rm -rf gdutils.tar.gz
+wget -q https://github.com/nenokkadine/gdutils/releases/latest/download/gdutils.tar.gz && tar -xzf gdutils.tar.gz && rm -rf gdutils.tar.gz
 #Service Accounts
 if [[ -n $GH_USER && -n $GH_AUTH_TOKEN && -n $GH_REPO ]]; then
 	echo "Usage of Service Accounts (Git), Clonning git"

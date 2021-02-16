@@ -18,5 +18,5 @@ RUN \
                        unzip \
                        xz \
                        bash \
-                       caddy && \
+                       htop && \
     rm -rf /var/cache/apk/*

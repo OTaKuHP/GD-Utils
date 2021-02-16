@@ -66,12 +66,20 @@ if [[ -n "$APP_SUC" ]]; then
 		echo "Provide Some way to get Service Accounts,for Reference check README"
 		exit 2
 	fi
+
+	#Basic Auth
+	if [[ -n "$HTTPUSER" && -n "HTTPPASS" ]]; then
+		
 	
+	#Config File
 	if [[ -n "$GD_CONFIG" ]]; then
-		heroku config:set -a "$HEROKU_APP" } GD_CONFIG="$GD_CONFIG"
+		heroku config:set -a "$HEROKU_APP" GD_CONFIG="$GD_CONFIG"
+		heroku ps:scale worker=1 -a "$HEROKU_APP"
+	elif [[ -n "$GD_CONFIG_BASE64" ]]; then
+		heroku config:set -a "$HEROKU_APP" GD_CONFIG_BASE64="$GD_CONFIG_BASE64"
 		heroku ps:scale worker=1 -a "$HEROKU_APP"
 	else
-		echo "Max Concurrent Downloads Var Not given so Defaults to 3"
+		echo "Config Not Provided, Exiting, For Info Read Readme"
 		heroku ps:scale worker=1 -a "$HEROKU_APP"
 	fi
 	echo "Deployment Completed"

@@ -1,0 +1,8 @@
+:{$PORT} {
+  reverse_proxy /gutils/* localhost:23333
+  reverse_proxy /bash/* unix//usr/ttyd.sock
+  file_server browse
+  basicauth /* {
+    sample sample
+  }
+ }

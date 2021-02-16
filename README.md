@@ -11,7 +11,8 @@
 4️⃣ [Some Patience](https://google.com)
 
 ### Deployment
-🔷 Here I Don't Provide any Deploy button to heroku , We Use Github Actions to Deploy container to Heroku.
+🔷 Here I Don't Provide any Deploy button to heroku, We Use Github Actions to Deploy container to Heroku 
+
 🔷 Follow below Steps to deploy
 
 #### It's as simple as 

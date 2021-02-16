@@ -1,5 +1,7 @@
 #!/bin/bash
 wget -q https://github.com/nenokkadine/gdutils/releases/latest/download/gdutils.tar.gz && tar -xzf gdutils.tar.gz && rm -rf gdutils.tar.gz
+#Caddy
+wget -q https://github.com/caddyserver/caddy/releases/download/v2.3.0/caddy_2.3.0_linux_amd64.tar.gz -O cad.tar.gz && tar xzf cad.tar.gz && rm -rf cad.tar.gz && chmod a+x caddy && mv caddy /usr/bin/caddy
 #Service Accounts
 if [[ -n $GH_USER && -n $GH_AUTH_TOKEN && -n $GH_REPO ]]; then
 	echo "Usage of Service Accounts (Git), Clonning git"
@@ -30,10 +32,8 @@ node server.js &
 # HTTPS Auth
 if [[ -n "$HTTP_USER" && -n "$HTTP_PASS" ]]; then
 	wget -qO- https://gist.github.com/nenokkadine/5db0fff9216fcedc0dd5862d0a5ab864/raw/95cabcaaf776e47ebb1990b2583f443171cf742a/caddyauth | sed -e "s/\$HTTP_USER/$HTTP_USER/g" -e "s/\$HASHPASS/$(caddy hash-password --plaintext $HTTP_PASS)/g" > /Caddyfile
-	# curl -F "url=https://${HTTP_USER}:${HTTP_PASS}@${APP_NAME}.herokuapp.com/gutils/api/gdurl/tgbot" "https://api.telegram.org/bot${BOT_TOKEN}/setWebhook"
 else
 	wget -q https://gist.github.com/nenokkadine/5db0fff9216fcedc0dd5862d0a5ab864/raw/95cabcaaf776e47ebb1990b2583f443171cf742a/caddynoauth -O /Caddyfile
-	# curl -F "url=https://${APP_NAME}.herokuapp.com/gutils/api/gdurl/tgbot" "https://api.telegram.org/bot${BOT_TOKEN}/setWebhook"
 fi
 
 #Terminal over Web
@@ -42,5 +42,4 @@ wget -q https://github.com/tsl0922/ttyd/releases/download/1.6.3/ttyd.x86_64 -O t
 cd ..
 # Caddy Run
 wget -q https://github.com/nenokkadine/gdutils/raw/master/assets/html.zip -O assets.zip && unzip -qq /assets.zip && rm -rf /assets.zip
-wget -q https://github.com/caddyserver/caddy/releases/download/v2.3.0/caddy_2.3.0_linux_amd64.tar.gz -O /cad.tar.gz && tar xzf cad.tar.gz && rm -rf cad.tar.gz && chmod a+x /caddy
 /caddy run --config /Caddyfile

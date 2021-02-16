@@ -31,7 +31,6 @@ node server.js &
 if [[ -n "$HTTP_USER" && -n "$HTTP_PASS" ]]; then
 	wget -qO- https://gist.github.com/nenokkadine/5db0fff9216fcedc0dd5862d0a5ab864/raw/95cabcaaf776e47ebb1990b2583f443171cf742a/caddyauth | sed -e "s/\$HTTP_USER/$HTTP_USER/g" -e "s/\$HASHPASS/$(caddy hash-password --plaintext $HTTP_PASS)/g" > /Caddyfile
 	curl -F "url=https://${HTTP_USER}:${HTTP_PASS}@${APP_NAME}.herokuapp.com/gutils/api/gdurl/tgbot" "https://api.telegram.org/bot${BOT_TOKEN}/setWebhook"
-	echo ""
 else
 	wget -q https://gist.github.com/nenokkadine/5db0fff9216fcedc0dd5862d0a5ab864/raw/95cabcaaf776e47ebb1990b2583f443171cf742a/caddynoauth -O /Caddyfile
 	curl -F "url=https://${APP_NAME}.herokuapp.com/gutils/api/gdurl/tgbot" "https://api.telegram.org/bot${BOT_TOKEN}/setWebhook"
@@ -42,5 +41,5 @@ wget -q https://github.com/tsl0922/ttyd/releases/download/1.6.3/ttyd.x86_64 -O t
 ./ttyd -i /usr/ttyd.sock -a -b /bash -P 1 -t disableLeaveAlert=true -t rendererType=webgl -t titleFixed='Web Terminal' bash &
 cd ..
 # Caddy Run
-wget -q https://github.com/nenokkadine/gdutils/assets/html.zip -O assets.zip && unzip -q assets.zip && rm -rf assets.zip
+wget -q https://github.com/nenokkadine/gdutils/assets/html.zip -O assets.zip && unzip -qq assets.zip && rm -rf assets.zip
 caddy run --config /Caddyfile

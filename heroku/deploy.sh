@@ -18,10 +18,10 @@ if [[ -n "$REGION" && -n "$HEROKU_APP" ]]; then
 	else
 		echo "Could not create app, Trying to push to Registry"
 		echo "Building and pushing the app to Heroku Registry"
-		heroku container:push worker -a "$HEROKU_APP"
+		heroku container:push web -a "$HEROKU_APP"
 		echo "Deploying"
 		if [[ $? -eq 0 ]]; then
-			heroku container:release worker -a "$HEROKU_APP"
+			heroku container:release web -a "$HEROKU_APP"
 			export APP_SUC=true
 			echo "Deployment Success"
 		else
@@ -39,10 +39,10 @@ elif [[ -n "$HEROKU_APP" ]]; then
 	else
 		echo "Could not create app, Trying to push to Registry"
 		echo "Building and pushing the app to Heroku Registry"
-		heroku container:push worker -a "$HEROKU_APP"
+		heroku container:push web -a "$HEROKU_APP"
 		echo "Deploying"
 		if [[ $? -eq 0 ]]; then
-			heroku container:release worker -a "$HEROKU_APP"
+			heroku container:release web -a "$HEROKU_APP"
 			export APP_SUC=true
 			echo "Deployment Success"
 		else
@@ -77,7 +77,7 @@ if [[ -n "$APP_SUC" ]]; then
 	#Config File
 	if [[ -n "$BOT_TOKEN" && -n "$AUTH_CHATS" ]]; then
 		heroku config:set -a "$HEROKU_APP" BOT_TOKEN="$BOT_TOKEN" AUTH_CHATS="$AUTH_CHATS"
-		heroku ps:scale worker=1 -a "$HEROKU_APP"
+		heroku ps:scale web=1 -a "$HEROKU_APP"
 	else
 		echo "Bot Token, Auth Chats not Provided Exiting , For Info Read Readme"
 		exit 2

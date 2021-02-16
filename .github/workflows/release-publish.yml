@@ -25,14 +25,14 @@ jobs:
         run: |
           cd src
           mkdir build
-          tar --exclude='./build' -cf build/gdutils.tar .
+          tar --exclude='./build' -czf build/gdutils.tar.gz .
       - uses: actions/upload-artifact@v2
         with:
           name: Build Location
-          path: src/build/gdutils.tar
+          path: src/build/gdutils.tar.gz
 
       - run: |
-          mv src/build/gdutils.tar gdutils.tar
+          mv src/build/gdutils.tar.gz gdutils.tar.gz
       - name: Create Release
         uses: softprops/action-gh-release@v1
         env:
@@ -40,4 +40,4 @@ jobs:
         with:
           name: ${{ steps.get_version.outputs.VERSION }}
           files: |
-            gdutils.tar
+            gdutils.tar.gz

@@ -1,9 +1,26 @@
 <div align="center">
 <h1>GDUtils Terminal + Bot</h1>
+<h3>Gd-Utils is just another Tool which helps us to Bypass the 750GB daily limit by Google</h3>
 </div>
+🌟 This repo is just for heroku deployment of GDUtils
 
-<details>
-    <summary>♻️ Environmental Variables</summary>
+### Pre Requisites
+1️⃣ [Github Account](https://github.com)
+2️⃣ [Heroku Account](https://heroku.com)
+3️⃣ [Telegram Account](https://telegram.org)
+4️⃣ [Some Patience](https://google.com)
+
+### Deployment
+🔷 Here I Don't Provide any Deploy button to heroku , We Use Github Actions to Deploy container to Heroku.
+🔷 Follow below Steps to deploy
+
+#### It's as simple as 
+1、Fork this Repo
+2、Go to Repository `Settings` -> `Secrets`
+![Secrets](assets/secrets.png)
+3、Now set the below Variables in the Github Repository Secrets
+<details open="open">
+    <summary>[♻️ Environmental Variables](#env)</summary>
 
 | Variable | Value | Example | Required | Description |
 | :---: | :---: | :---: | :---: | :---: |
@@ -20,3 +37,4 @@
 | HTTP_USER | Username | user | False | HTTP Basic auth adds an Extra Layer security for you app (recommended) |
 | HTTP_PASS | Password | pass | False | HTTP Basic auth adds an Extra Layer security for you app (recommended) |
 </details>
+

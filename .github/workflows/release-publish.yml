@@ -18,10 +18,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '15.x'
-      - run: cd src
-      - run: yarn
+      - run: |
+          cd src
+          yarn
       - name: Compress Build Outputs
         run: |
+          cd src
           tar -czvf gdutils.tar.gz .
       - uses: actions/upload-artifact@v2
         with:

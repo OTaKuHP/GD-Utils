@@ -1,5 +1,5 @@
 #Use Alpine Base Image Rather than Debian
-FROM node:alpine
+FROM node:lts-alpine3.10
 
 LABEL maintainer="Nenokkadine"
 

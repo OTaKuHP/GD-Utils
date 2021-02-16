@@ -1,0 +1,40 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  Builds:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '15.x'
+      - run: cd src
+      - run: yarn
+      - name: Compress Build Outputs
+        run: |
+          tar -czvf gdutils.tar.gz .
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Build Location
+          path: src/gdutils.tar.gz
+
+      - run: |
+          mv src/gdutils.tar.gz gdutils.tar.gz
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          name: ${{ steps.get_version.outputs.VERSION }}
+          files: |
+            gdutils.tar.gz

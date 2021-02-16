@@ -3,7 +3,7 @@ name: GDUtils Alpine Base Image
 on: workflow_dispatch
 
 env:
-  IMAGE: ghcr.io/nenokkadine/gdutils
+  IMAGE: ghcr.io/${{ github.repository }}
 
 jobs:
   push:
@@ -19,4 +19,4 @@ jobs:
         run: |
           docker build . -f baseimage/Dockerfile -t ${{ env.IMAGE }}:latest
           echo "Pushing"
-          docker push ${{ env.IMAGE }}:$VERSION
+          docker push ${{ env.IMAGE }}:latest

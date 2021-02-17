@@ -39,14 +39,14 @@ copy() {
       read -p " Choose Y/N:" option1
       case "$option1" in
       Y)
-            node copy $SRC $DST -S
+            nohup node copy $SRC $DST -S
 	        ;;
       N)
-            node copy $SRC $DST -S -u
+            nohup node copy $SRC $DST -S -u
             ;;
       *)
             echo
-            cecho r "Choose Y/N"
+            cecho r "Enter the Correct Option"
             ;;
       esac
       ;;
@@ -55,10 +55,10 @@ copy() {
       read -p " Choose Y/N:" option1
       case "$option1" in
       Y)
-            node copy $SRC $DST -S -D
+            nohup node copy $SRC $DST -S -D
 	        ;;
       N)
-            node copy $SRC $DST -S -D -u
+            nohup node copy $SRC $DST -S -D -u
             ;;
       *)
             echo
@@ -92,10 +92,10 @@ count() {
       read -p " Choose Y/N:" option2
       case "$option2" in
       Y)
-            node count $SRC -S
+            nohup node count $SRC -S
 	        ;;
       N)
-            node count $SRC -S -u
+            nohup node count $SRC -S -u
             ;;
       *)
             echo
@@ -108,7 +108,7 @@ count() {
       read -p " Choose Y/N:" option2
       case "$option2" in
       Y)
-            node count $SRC -S -t tree -o /out/tree.html
+            nohup node count $SRC -S -t tree -o /out/tree.html
             if [[ $? -eq 0 ]]; then
                 printf " Your Tree Has been Generated, Go to %s to preview it" "$(cecho g "https://${APP_NAME}.herokuapp.com/out/tree.html")"
             else
@@ -116,7 +116,7 @@ count() {
             fi 
 	        ;;
       N)
-            node count $SRC -S -u -t tree -o /out/tree.html
+            nohup node count $SRC -S -u -t tree -o /out/tree.html
             if [[ $? -eq 0 ]]; then
                 printf " Your Tree Has been Generated, Go to %s to preview it" "$(cecho g "https://${APP_NAME}.herokuapp.com/out/tree.html")" 
             else
@@ -134,7 +134,7 @@ count() {
       read -p " Choose Y/N:" option2
       case "$option2" in
       Y)
-            node count $SRC -S -t snap -o /out/snap.html
+            nohup node count $SRC -S -t snap -o /out/snap.html
             if [[ $? -eq 0 ]]; then
                 printf " Your Snap2HTML Has been Generated, Go to %s to preview it" "$(cecho g "https://${APP_NAME}.herokuapp.com/out/snap.html")" 
             else
@@ -142,7 +142,7 @@ count() {
             fi 
 	        ;;
       N)
-            node count $SRC -S -u -t snap -o /out/snap.html
+            nohup node count $SRC -S -u -t snap -o /out/snap.html
             if [[ $? -eq 0 ]]; then
                 printf " Your Snap2HTML Has been Generated, Go to %s to preview it" "$(cecho g "https://${APP_NAME}.herokuapp.com/out/snap.html")" 
             else
@@ -167,7 +167,7 @@ dedupe() {
   cecho r "Remember to add your SAs as Content manager (atleast) in source TD\n"
   echo "Provide Folder ID\n"
   read SRC 
-  node dedupe $SRC -S
+  nohup node dedupe $SRC -S
 }
 
 

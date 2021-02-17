@@ -57,6 +57,28 @@
     https://YOURAPP.herokuapp.com/out/
     ```
 
+### Usage
+ - **Web Terminal**
+  
+      Just type `gdutils` in Web Terminal
+      ```
+      bash-5.0$ gdutils
+      GD-UTILS by iwestlin, English version by Roshanconnor, Polished by Nenokkadine
+      1.Copy Files to your Teamdrive
+      ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
+      2.Calculate Size
+      ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
+      3.Remove Duplicate Files
+      ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
+      4.EXIT
+
+      Choose any Number [1-4]:
+
+      ```
+
+ - **Telegram Bot** 
+      
+      Just Type `/help` in Telegram Bot
 
 ### Environmental Variables
 

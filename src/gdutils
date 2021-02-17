@@ -110,7 +110,7 @@ count() {
       Y)
             node count $SRC -S -t tree -o /out/tree.html
             if [[ $? -eq 0 ]]; then
-                echo " Your Tree Has been Generated, Go to %s to preview it" "$(cecho g "https://${APP_NAME}.herokuapp.com/out/tree.html")"
+                printf " Your Tree Has been Generated, Go to %s to preview it" "$(cecho g "https://${APP_NAME}.herokuapp.com/out/tree.html")"
             else
                 cecho r "Tree Generation Failed"
             fi 
@@ -118,7 +118,7 @@ count() {
       N)
             node count $SRC -S -u -t tree -o /out/tree.html
             if [[ $? -eq 0 ]]; then
-                echo " Your Tree Has been Generated, Go to %s to preview it" "$(cecho g "https://${APP_NAME}.herokuapp.com/out/tree.html")" 
+                printf " Your Tree Has been Generated, Go to %s to preview it" "$(cecho g "https://${APP_NAME}.herokuapp.com/out/tree.html")" 
             else
                 cecho r "Tree Generation Failed"
             fi
@@ -136,7 +136,7 @@ count() {
       Y)
             node count $SRC -S -t snap -o /out/snap.html
             if [[ $? -eq 0 ]]; then
-                echo " Your Snap2HTML Has been Generated, Go to %s to preview it" "$(cecho g "https://${APP_NAME}.herokuapp.com/out/snap.html")" 
+                printf " Your Snap2HTML Has been Generated, Go to %s to preview it" "$(cecho g "https://${APP_NAME}.herokuapp.com/out/snap.html")" 
             else
                 cecho r "Snap2HTML Generation Failed"
             fi 
@@ -144,7 +144,7 @@ count() {
       N)
             node count $SRC -S -u -t snap -o /out/snap.html
             if [[ $? -eq 0 ]]; then
-                echo " Your Snap2HTML Has been Generated, Go to %s to preview it" "$(cecho g "https://${APP_NAME}.herokuapp.com/out/snap.html")" 
+                printf " Your Snap2HTML Has been Generated, Go to %s to preview it" "$(cecho g "https://${APP_NAME}.herokuapp.com/out/snap.html")" 
             else
                 cecho r "Snap2HTML Generation Failed"
             fi

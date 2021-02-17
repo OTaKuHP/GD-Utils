@@ -22,7 +22,7 @@
 2. Go to Repository `Settings` -> `Secrets`
     ![Secrets](assets/secrets.png)
 3. Now set the below Variables in the Github Repository Secrets
-    [Environmental Variables](#--Environmental)
+    [Environmental Variables](#Environmental)
 4. After Setting this go to Actions and Run the Workflow
    ![Actions](assets/actions.png)
 5. Now Go to the App URL and Press the link shown Below
@@ -64,6 +64,16 @@
 | AUTH_CHATS | Authorized Chats | 'UserA','UserB' | True | Telegram Username's Should be Given and Should be in Single Quotes |
 | HTTP_USER | Username | user | False | HTTP Basic auth adds an Extra Layer security for you app (recommended) |
 | HTTP_PASS | Password | pass | False | HTTP Basic auth adds an Extra Layer security for you app (recommended) |
+
+### How to make the App Never Sleep?
+1. Setup a [CronJob](https://console.cron-job.org) to Make the heroku app never sleep
+   - First Sign-up in the above Site
+   - Then Go [here](https://console.cron-job.org/jobs/create), and Follow the ScreenShot below
+        ![cronJob Basic](assets/cron1.png)
+   - If you have Setup Basic HTTP Auth you should fill these too
+        ![HTTP Auth](assets/cron2.png) 
+   - Now you can save and enable the cron job, and your app never Sleeps again.
+2. Use [Kaffine](https://kaffeine.herokuapp.com/) and Just give the app name, App's With Basic HTTP Auth enabled Might not work here
 
 ### Credits
 👏 [iwestlin](https://github.com/iwestlin) - The original Developer of this tool

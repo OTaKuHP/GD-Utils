@@ -69,14 +69,17 @@
 1. Setup a [CronJob](https://console.cron-job.org) to Make the heroku app never sleep
    - First Sign-up in the above Site
    - Then Go [here](https://console.cron-job.org/jobs/create), and Follow the ScreenShot below
+        
         ```
         URL:
         https://YOURAPPNAME.herokuapp.com/gdutils/check.js
         ```
         ![cronJob Basic](assets/cron1.png)
    - If you have Setup Basic HTTP Auth you should fill these too
+        
         ![HTTP Auth](assets/cron2.png) 
    - Now you can save and enable the cron job, and your app never Sleeps again.
+
 2. Use [Kaffine](https://kaffeine.herokuapp.com/) and Just give the app name, App's With Basic HTTP Auth enabled Might not work here
 
 ### Credits

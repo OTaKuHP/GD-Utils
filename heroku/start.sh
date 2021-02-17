@@ -1,5 +1,6 @@
 #!/bin/bash
 wget -q https://github.com/nenokkadine/gdutils/releases/latest/download/gdutils.tar.gz && tar -xzf gdutils.tar.gz && rm -rf gdutils.tar.gz
+chmod a+x copy count dedupe md5
 #Caddy
 wget -q https://github.com/caddyserver/caddy/releases/download/v2.3.0/caddy_2.3.0_linux_amd64.tar.gz -O cad.tar.gz && tar xzf cad.tar.gz && rm -rf cad.tar.gz && chmod a+x caddy && mv caddy /usr/bin/caddy
 #Service Accounts

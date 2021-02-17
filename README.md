@@ -22,7 +22,7 @@
 2. Go to Repository `Settings` -> `Secrets`
     ![Secrets](assets/secrets.png)
 3. Now set the below Variables in the Github Repository Secrets
-    ![Environmental Variables](#--Environmental-Variables)
+    ![Environmental Variables](#--Environmental)
 4. After Setting this go to Actions and Run the Workflow
    ![Actions](assets/actions.png)
 5. Now Go to the App URL and Press the link shown Below
@@ -30,15 +30,18 @@
 6. Now it Opens the Web Terminal
    ![Terminal](assets/terminal.png)
 7. Now Copy paste the Below Line's and Paste it there and press enter
+8. 
     🔷 if You have given HTTP Basic Auth Vars then Use the Below One
+
     ```
-    curl -F "url=https://${HTTP_USER}:${HTTP_PASS}@${APP_NAME}.herokuapp.com/gutils/api/gdurl/tgbot" "https://api.telegram.org/bot${BOT_TOKEN}/setWebhook"
+    > curl -F "url=https://${HTTP_USER}:${HTTP_PASS}@${APP_NAME}.herokuapp.com/gutils/api/gdurl/tgbot" "https://api.telegram.org/bot${BOT_TOKEN}/setWebhook"
     ```
     🔷 Else Use the Below One
+
     ```
-    curl -F "url=https://${APP_NAME}.herokuapp.com/gutils/api/gdurl/tgbot" "https://api.telegram.org/bot${BOT_TOKEN}/setWebhook"
+    > curl -F "url=https://${APP_NAME}.herokuapp.com/gutils/api/gdurl/tgbot" "https://api.telegram.org/bot${BOT_TOKEN}/setWebhook"
     ```
-8. Done You Bot is Now Live and You can use the terminal Even if you want and Can generate Snap2HTML and Tree
+9. Done You Bot is Now Live and You can use the terminal Even if you want and Can generate Snap2HTML and Tree
    🔷 To access your files in your working directory go to 
     ```
     https://YOURAPP.herokuapp.com/gdutils/

@@ -20,6 +20,7 @@
 
 1. Fork this Repo
 2. Go to Repository `Settings` -> `Secrets`
+    
     ![Secrets](assets/secrets.png)
 3. Now set the below Variables in the Github Repository Secrets
     [Environmental Variables](#Environmental)
@@ -45,7 +46,9 @@
     > curl -F "url=https://${APP_NAME}.herokuapp.com/gutils/api/gdurl/tgbot" "https://api.telegram.org/bot${BOT_TOKEN}/setWebhook"
     ```
 8. Done You Bot is Now Live and You can use the terminal Even if you want and Can generate Snap2HTML and Tree
-   🔷 To access your files in your working directory go to 
+   
+   🔷 To access your files in your working directory go to (Avoid Using name index.html for Both Snap2HTML and Tree)
+    
     ```
     https://YOURAPP.herokuapp.com/gdutils/
     ```

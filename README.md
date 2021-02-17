@@ -1,8 +1,9 @@
 <div align="center">
 <h1>GDUtils Terminal + Bot</h1>
 <h3>Gd-Utils is just another Tool which helps us to Bypass the 750GB daily limit by Google</h3>
+<h3>🌟 This repo is just for Docker/Heroku deployment of GDUtils 🌟</h3>
 </div>
-🌟 This repo is just for heroku deployment of GDUtils
+
 
 ### Pre Requisites
 1️⃣ [Github Account](https://github.com)

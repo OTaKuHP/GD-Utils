@@ -23,16 +23,20 @@
     
     ![Secrets](assets/secrets.png)
 3. Now set the below Variables in the Github Repository Secrets
-    [Environmental Variables](#Environmental)
+    [Environmental Variables](#environmental-variables)
+
 4. After Setting this go to Actions and Run the Workflow
    
    ![Actions](assets/actions.png)
+
 5. Now Go to the App URL and Press the link shown Below
    
    ![Webhook](assets/site.jpg)
+
 6. Now it Opens the Web Terminal
    
    ![Terminal](assets/terminal.png)
+
 7. Now Copy paste the Below Line's and Paste it there and press enter
  
     🔷 if You had given HTTP Basic Auth Vars then Use the Below One
@@ -50,7 +54,7 @@
    🔷 To access your files in your working directory go to (Avoid Using name index.html for Both Snap2HTML and Tree)
     
     ```
-    https://YOURAPP.herokuapp.com/gdutils/
+    https://YOURAPP.herokuapp.com/out/
     ```
 
 
@@ -91,7 +95,7 @@
 ### Credits
 👏 [iwestlin](https://github.com/iwestlin) - The original Developer of this tool
 
-👏 [Roshan](https://github.com/roshanconner123) - Translated Entire repo into English
+👏 [Roshan](https://github.com/roshanconner123) - Translated Entire repo into English and the bash Script
 
 👏 [Shuanglei Tao](https://github.com/tsl0922) - Developer of TTYD (Terminal over Web)
 

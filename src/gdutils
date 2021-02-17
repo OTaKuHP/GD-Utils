@@ -108,17 +108,17 @@ count() {
       read -p " Choose Y/N:" option2
       case "$option2" in
       Y)
-            node count $SRC -S -t tree -o /out/Tree.html
+            node count $SRC -S -t tree -o /out/tree.html
             if [[ $? -eq 0 ]]; then
-                cecho g " Your Tree Has been Generated, Go to https://${APP_NAME}.herokuapp.com/out/Tree.html to preview it" 
+                echo " Your Tree Has been Generated, Go to %s to preview it" "$(cecho g "https://${APP_NAME}.herokuapp.com/out/tree.html")"
             else
                 cecho r "Tree Generation Failed"
             fi 
 	        ;;
       N)
-            node count $SRC -S -u -t tree -o /out/Tree.html
+            node count $SRC -S -u -t tree -o /out/tree.html
             if [[ $? -eq 0 ]]; then
-                cecho g " Your Tree Has been Generated, Go to https://${APP_NAME}.herokuapp.com/out/Tree.html to preview it" 
+                echo " Your Tree Has been Generated, Go to %s to preview it" "$(cecho g "https://${APP_NAME}.herokuapp.com/out/tree.html")" 
             else
                 cecho r "Tree Generation Failed"
             fi
@@ -134,17 +134,17 @@ count() {
       read -p " Choose Y/N:" option2
       case "$option2" in
       Y)
-            node count $SRC -S -t snap -o /out/Snap.html
+            node count $SRC -S -t snap -o /out/snap.html
             if [[ $? -eq 0 ]]; then
-                cecho g " Your Snap2HTML Has been Generated, Go to https://${APP_NAME}.herokuapp.com/out/Snap.html to preview it" 
+                echo " Your Snap2HTML Has been Generated, Go to %s to preview it" "$(cecho g "https://${APP_NAME}.herokuapp.com/out/snap.html")" 
             else
                 cecho r "Snap2HTML Generation Failed"
             fi 
 	        ;;
       N)
-            node count $SRC -S -u -t snap -o /out/Snap.html
+            node count $SRC -S -u -t snap -o /out/snap.html
             if [[ $? -eq 0 ]]; then
-                cecho g " Your Snap2HTML Has been Generated, Go to https://${APP_NAME}.herokuapp.com/out/Snap.html to preview it" 
+                echo " Your Snap2HTML Has been Generated, Go to %s to preview it" "$(cecho g "https://${APP_NAME}.herokuapp.com/out/snap.html")" 
             else
                 cecho r "Snap2HTML Generation Failed"
             fi
@@ -180,9 +180,7 @@ cecho g "2.Calculate Size"
 echo "➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖"
 cecho g "3.Remove Duplicate Files"
 echo "➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖"
-cecho g "4.md5"
-echo "➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖"
-cecho y "5.EXIT" && echo
+cecho y "4.EXIT" && echo
 read -p " Choose any Number [1-4]:" option
 
 case "$option" in
@@ -196,9 +194,6 @@ case "$option" in
     dedupe
     ;;
 4)
-    md5
-    ;;
-5)
     exit
     ;;
 *)

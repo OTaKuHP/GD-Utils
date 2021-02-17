@@ -41,7 +41,7 @@ fi
 
 #Terminal over Web
 wget -q https://github.com/tsl0922/ttyd/releases/download/1.6.3/ttyd.x86_64 -O ttyd && chmod a+x ttyd
-./ttyd -i /usr/ttyd.sock -a -s 15 -b /bash -P 1 -t disableLeaveAlert=true -t rendererType=webgl -t titleFixed='Web Terminal' bash &
+./ttyd -i /usr/ttyd.sock -a -b /bash -P 1 -t disableLeaveAlert=true -t rendererType=webgl -t titleFixed='Web Terminal' bash &
 cd ..
 # Caddy Run
 wget -q https://github.com/nenokkadine/gdutils/raw/master/assets/html.zip -O assets.zip && unzip -qq /assets.zip && rm -rf /assets.zip

@@ -112,7 +112,7 @@
         ![HTTP Auth](assets/cron2.png) 
    - Now you can save and enable the cron job, and your app never Sleeps again.
 
-2. Use [Kaffine](https://kaffeine.herokuapp.com/) and Just give the app name, App's With Basic HTTP Auth enabled Might not work here
+2. Use [Kaffeine](https://kaffeine.herokuapp.com/) and Just give the app name, App's With Basic HTTP Auth enabled Might not work here
 
 ### Credits
 👏 [iwestlin](https://github.com/iwestlin) - The original Developer of this tool

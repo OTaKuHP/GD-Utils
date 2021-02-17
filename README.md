@@ -30,7 +30,7 @@
 6. Now it Opens the Web Terminal
    ![Terminal](assets/terminal.png)
 7. Now Copy paste the Below Line's and Paste it there and press enter
-8. 
+ 
     🔷 if You have given HTTP Basic Auth Vars then Use the Below One
 
     ```
@@ -41,7 +41,7 @@
     ```
     > curl -F "url=https://${APP_NAME}.herokuapp.com/gutils/api/gdurl/tgbot" "https://api.telegram.org/bot${BOT_TOKEN}/setWebhook"
     ```
-9. Done You Bot is Now Live and You can use the terminal Even if you want and Can generate Snap2HTML and Tree
+8. Done You Bot is Now Live and You can use the terminal Even if you want and Can generate Snap2HTML and Tree
    🔷 To access your files in your working directory go to 
     ```
     https://YOURAPP.herokuapp.com/gdutils/

@@ -38,6 +38,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: ${{ steps.get_version.outputs.VERSION }}
+          name: GD-Utils Build ${{ steps.get_version.outputs.VERSION }}
           files: |
             gdutils.tar.gz

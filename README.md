@@ -11,7 +11,7 @@
 
 3️⃣ [Telegram Account](https://telegram.org)
 
-4️⃣ [Some Patience](https://google.com)
+4️⃣ [Some Patience](https://www.google.com/search?q=how+to+be+more+patient)
 
 ### Deployment
 🔷 Here I Don't Provide any Deploy button to heroku, We Use Github Actions to Deploy container to Heroku 
@@ -24,14 +24,17 @@
 3. Now set the below Variables in the Github Repository Secrets
     [Environmental Variables](#Environmental)
 4. After Setting this go to Actions and Run the Workflow
+   
    ![Actions](assets/actions.png)
 5. Now Go to the App URL and Press the link shown Below
+   
    ![Webhook](assets/site.jpg)
 6. Now it Opens the Web Terminal
+   
    ![Terminal](assets/terminal.png)
 7. Now Copy paste the Below Line's and Paste it there and press enter
  
-    🔷 if You have given HTTP Basic Auth Vars then Use the Below One
+    🔷 if You had given HTTP Basic Auth Vars then Use the Below One
 
     ```
     > curl -F "url=https://${HTTP_USER}:${HTTP_PASS}@${APP_NAME}.herokuapp.com/gutils/api/gdurl/tgbot" "https://api.telegram.org/bot${BOT_TOKEN}/setWebhook"
@@ -54,7 +57,7 @@
 | :---: | :---: | :---: | :---: | :---: |
 | HEROKU_EMAIL | Heroku email | abc@abc.com | True | Just Give the email you used for Heroku Account|
 | HEROKU_API_KEY | Heroku API key | xxxxxxx-xxxx-xxxx-xxxx-xxxxxx | True | Get it from [Heroku](https://dashboard.heroku.com/account/applications/authorizations/new) |
-| REGION | Heroku Container Region | EU | False | Needed only if you need  a EU Container |
+| REGION | Heroku Container Region | EU | False | Needed only if you need an EU Container |
 | HEROKU_APP | Heroku app name | Name Must be unique | True | Heroku app name that needs to be Updated or Created (Should be in lowercase) |
 | SA_ZIP | Direct Link | https://abc.com/sa.zip | False* | Service accounts to be zipped in a way that there should be a folder named accounts containing SA Jsons |
 | GH_REPO | SA repo name | accounts | False** | Git repo name where SA's are Uploaded |

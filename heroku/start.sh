@@ -9,13 +9,13 @@ wget -q https://github.com/caddyserver/caddy/releases/download/v2.3.0/caddy_2.3.
 if [[ -n $GH_USER && -n $GH_AUTH_TOKEN && -n $GH_REPO ]]; then
 	echo "Usage of Service Accounts (Git), Clonning git"
 	git clone https://"$GH_AUTH_TOKEN"@github.com/"$GH_USER"/"$GH_REPO" accounts
-    mv accounts/*.json sa/
+    	mv accounts/*.json sa/
 	rm -rf accounts
 elif [[ -n $SA_ZIP ]]; then
 	echo "Usage of Service Accounts (Zip URL), Downloading"
 	wget -q $SA_ZIP -O accounts.zip
-    unzip -qq accounts.zip
-    mv accounts/*.json sa/
+    	unzip -qq accounts.zip
+    	mv accounts/*.json sa/
 	rm -rf accounts
 else
 	echo "Neither Service Accounts Nor Token Provided. Exiting..."

@@ -4,6 +4,7 @@
 <h3>🌟 This repo is just for Docker/Heroku deployment of GDUtils 🌟</h3>
 </div>
 
+> Do not overuse it, or your account might be banned by Heroku.
 
 ### Pre Requisites
 1️⃣ [Github Account](https://github.com)
